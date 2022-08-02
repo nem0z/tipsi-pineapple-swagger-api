@@ -1,0 +1,141 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "PineApple Swagger API",
+        "description": "Swagger-ui - doc for the pineapple API",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [{
+            "name": "Product",
+            "description": "API for pineapple's products"
+        },
+        {
+            "name": "Order",
+            "description": "API for pineapple's orders"
+        }
+    ],
+    "schemes": ["http"],
+    "consumes": ["application/json"],
+    "produces": ["application/json"],
+    "paths": {
+        "/products": {
+            "get": {
+                "tags": ["Product"],
+                "summary": "Get list of products",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/product/{_id}": {
+            "get": {
+                "tags": ["Product"],
+                "parameters": [{
+                    "name": "_id",
+                    "in": "path",
+                    "type": "string",
+                    "required": true
+                }],
+                "summary": "Get a specific product by his _id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                }
+            }
+        },
+        "/orders": {
+            "get": {
+                "tags": ["Order"],
+                "summary": "Get list of orders",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Order"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/order": {
+            "post": {
+                "tags": ["Order"],
+                "summary": "Get list of orders",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Order"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Product": {
+            "required": ["_id", "name", "desc", "price"],
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "name": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer"
+                }
+            }
+        },
+
+        "Order": {
+            "required": ["_id", "date", "price", "order"],
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "uniqueItems": true
+                },
+                "date": {
+                    "type": "number"
+                },
+                "price": {
+                    "type": "integer"
+                },
+                "order": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    }
+                }
+            }
+        }
+    }
+}

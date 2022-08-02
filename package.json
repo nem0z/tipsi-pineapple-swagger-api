@@ -1,0 +1,34 @@
+{
+  "name": "tipsi-pineapple-swagger-api",
+  "version": "1.0.0",
+  "description": "Swagger for pineapple API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nem0z/tipsi-pineapple-swagger-api.git"
+  },
+  "keywords": [
+    "Swagger",
+    "Swagger-ui",
+    "express",
+    "API"
+  ],
+  "author": "nem0z",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nem0z/tipsi-pineapple-swagger-api/issues"
+  },
+  "homepage": "https://github.com/nem0z/tipsi-pineapple-swagger-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "express-swagger-generator": "^1.1.17"
+  }
+}
