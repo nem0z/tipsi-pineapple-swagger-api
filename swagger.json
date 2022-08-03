@@ -81,15 +81,24 @@
         "/order": {
             "post": {
                 "tags": ["Order"],
-                "summary": "Get list of orders",
+                "summary": "Create a new order",
+
+                "parameters": [
+                    {
+                        "name": "body",
+                        "paramType": "body",
+                        "in": "body",
+                        "description": "body for the POST request",
+                        "required": false
+                    }
+                ],
+
+
                 "responses": {
-                    "200": {
-                        "description": "OK",
+                    "201": {
+                        "description": "CREATED",
                         "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/Order"
-                            }
+                            "$ref": "#/definitions/Order"
                         }
                     }
                 }
