@@ -16,13 +16,5 @@ app.use(
     swagger.setup(config)
   );
 
-  app.listen(8888, () => console.log('Serveur is running on port 8888...'));
-
-
-  // "schema": {
-                    //     "type": "array",
-                    //     "items": {
-                    //         "$ref": "#/definitions/Product"
-                    //     }
-                    // }
+app.listen(8888, () => console.log('Serveur is running on port 8888...'));
 
