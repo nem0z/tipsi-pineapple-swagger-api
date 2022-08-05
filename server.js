@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import swagger from './index.js';
+import swagger from './index.cjs';
 
 const app = new express();
 app.use(cors());
