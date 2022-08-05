@@ -1,8 +1,8 @@
 {
   "name": "pineapple-swagger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Swagger for pineapple API",
-  "main": "index.js",
+  "main": "export.js",
   "type": "module",
   "scripts": {
     "start": "node index.js"
