@@ -1,11 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import swagger from './export.js';
+import * as swagger from 'swagger-ui-express';
+import { readFile } from 'fs/promises';
 
-const app = new express();
-app.use(cors());
-
-app.use(...await swagger('/api-docs'));
-
-app.listen(8888, () => console.log('Serveur is running on port 8888...'));
-
+export default function(url, host = "localhost:3000") {
+    return readFile('./swagger.json')
+        .then(data => JSON.parse(data))
+        .then(json => ({ ...json, host: host }))
+        .then(config => [url, swagger.serve, swagger.setup(config)]);
+}
