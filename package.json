@@ -1,5 +1,5 @@
 {
-  "name": "tipsi-pineapple-swagger-api",
+  "name": "pineapple-swagger",
   "version": "1.0.0",
   "description": "Swagger for pineapple API",
   "main": "index.js",

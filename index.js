@@ -1,20 +1,11 @@
 import express from 'express';
-import * as swagger from 'swagger-ui-express';
-import { readFile } from 'fs/promises';
 import cors from 'cors';
-
-const config = JSON.parse(
-  await readFile('./swagger.json')
-);
+import swagger from './export.js';
 
 const app = new express();
 app.use(cors());
 
-app.use(
-    '/api-docs',
-    swagger.serve, 
-    swagger.setup(config)
-  );
+app.use(...await swagger('/api-docs'));
 
 app.listen(8888, () => console.log('Serveur is running on port 8888...'));
 
